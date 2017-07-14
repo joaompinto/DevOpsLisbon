@@ -1,0 +1,27 @@
+<%block cached="True"/>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Adwaita</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        %for item in data_provider('webroot/_navigation'):
+        <li
+          %if "/"+current_path==item['link']:
+          class ="active"
+          %endif
+          ><a href="${item['link']}">${item['name']}</a>
+        </li>
+        %endfor
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+</block>

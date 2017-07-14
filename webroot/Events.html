@@ -1,0 +1,15 @@
+{% extends "_global.html" %}
+
+{% block tile %}{{ title }}Event List{% endblock %}
+{% block content %}
+
+<p class="lead">List of events being planned</p>
+<h1>Projects</h1>
+
+{% for item in items %}
+<div class="row">
+  <dd class="col-sm-4"><a href="{{ item.link }}">{{ item.title }}</a></dd>
+  <dd class="col-sm-5">{{ item.text }}</dd>
+</div>
+{% endfor %}
+{% endblock %}

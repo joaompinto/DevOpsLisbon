@@ -1,0 +1,18 @@
+{% extends "_global.html" %}
+
+{% block tile %}{{ title }}{% endblock %}
+
+{% block content %}
+
+    <h1>This is my CF APP</h1>
+
+    <img class="center-block" SRC="{{ top_image.src }}" height="{{ top_image.height }}">
+
+    {% for item in items %}
+        <h1>{{ item.title }}</h1>
+        <p class="{{ item.class }}">
+            {{ item.text }}
+        </p>
+    {% endfor %}
+
+{% endblock %}

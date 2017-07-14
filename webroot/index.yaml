@@ -1,0 +1,15 @@
+title: Welcome to DevOps Lisbon Demo app
+
+top_image:
+  src: /images/DevOpsEvent.jpeg
+  height: 200
+
+items:
+  -
+    title: Supporting open source vitality
+    text: Open source software is very easy to create, but much harder to survive. With most projects borning as single person hobby, even when tecnhically promissing, if they do not got minimal community support, they are frequently abandoned.
+    class: lead
+  -
+    title: The Adwaita task force goal
+    text: Software maintenance, distribution and avertisement services for selected open source projects.
+    class: lead

@@ -1,0 +1,10 @@
+items:
+  -
+    title: Cloud Foundry
+    text:  Open source, multi cloud application platform as a service (PaaS), managed by the Cloud Foundry Foundation
+    link:  https://www.cloudfoundry.org/
+    class: lead
+  -
+    title: BOSH
+    text:  BOSH is an open source tool for release engineering, deployment, lifecycle management, and monitoring of distributed systems. 
+    link: https://www.bosh.io

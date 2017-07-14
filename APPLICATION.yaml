@@ -1,0 +1,44 @@
+# This is a flexible applicatin scheme definition file. It decribes how the different
+# directories and files should be used, it should be both human and computer comprehensible.
+
+# You can read more about the YAML format at https://en.wikipedia.org/wiki/YAML
+
+# This application license is drescribed on file LICENSE-2.0.txt
+
+description: "
+  This is a web application that uses static content, HTML templates, and server side
+  logic (controllers).
+
+  During application startup, content from the 'webroot' will be checked, and
+  directories/files will be associated wit features and urls per the following rules:
+    a) content from directories with a leading '_' will be served statically,
+      with the '_' being stripped from the url
+    c) *.html files (not starting with an '_') will be rendered using the template engine
+    d) *.py files will be executed as python code http handlers
+    e) except for static files, file extensions will be removed from the corresponding urls
+
+    URL mapping examples:
+      webroot/_css/name.css will be available as /css/name.css
+      webroot/About.html will be available as /About
+      webroot/About/Me.html will be available as /About/Me
+      webroot/Contact.py will be available as /Contact
+"
+features:
+  web:
+    content_directory: webroot
+    static_files:
+      - on_directory_name: "_*"
+        url_replace:  ["/_", "/"]   # strip "_" from directory name
+    templates:
+      - on_file_name: "*.html"
+        directory_exclude: "_*"     # static content
+        file_exclude: "_*"          # template parts
+        url_replace:
+          - ".html" : ""            # Strip extension
+          - "/index" : "/"          # Map index file to /
+    controllers:
+      - on_file_name: "*.py"
+        directory_exclude: "_*"     # static content
+        url_replace:
+          - ".py" : ""              # Strip extension
+          - "/index" : "/"          # Map index file to /

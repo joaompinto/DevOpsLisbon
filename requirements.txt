@@ -1,0 +1,4 @@
+https://github.com/Adwaita/QuickWeb/archive/dev.zip  
+psycopg2
+Beaker
+future
