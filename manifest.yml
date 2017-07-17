@@ -1,5 +1,5 @@
 ---
 applications:
-- name: devopslisbon
+- name: devopslx
   memory: 128MB
   disk_quota: 256MB
